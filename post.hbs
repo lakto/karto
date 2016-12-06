@@ -1,0 +1,30 @@
+{{!< default}}
+
+{{#post}}
+    <!-- Wrapper -->
+    <div class="background" {{#if image}}style="background-image: url({{image}})"{{/if}}></div>
+
+    <div class="wrapper">
+        <!-- Main -->
+
+        <section class="main" id="{{slug}}">
+
+            <article>
+                <header>
+
+                    <a href="{{url}}">
+                        <h1>{{title}}</h1>
+                    </a>
+
+                </header>
+                {{content}}
+                <footer>
+                    <hr>
+
+                </footer>
+            </article>
+
+        </section>
+
+    </div>
+{{/post}}

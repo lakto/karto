@@ -33,19 +33,38 @@
     {{ghost_head}}
 
 </head>
-<body class="is-loading {{body_class}}" style="background-image: url({{@blog.cover}})">
+<body class="is-loading {{body_class}}">
+    {{>header}}
 
-{{{body}}}
+    {{{body}}}
 
-<!-- Scripts -->
-<script>
-    if ('addEventListener' in window) {
-        window.addEventListener('load', function () {
-            document.body.className = document.body.className.replace(/\bis-loading\b/, '');
-        });
-//        document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-    }
-</script>
+    {{>footer}}
+
+    {{ghost_foot}}
+    <!-- Scripts -->
+    <script>
+        if ('addEventListener' in window) {
+            window.addEventListener('load', function () {
+                document.body.className = document.body.className.replace(/\bis-loading\b/, '');
+                var nav = document.getElementById('nav');
+            });
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 60) {
+                    if (nav.className !== 'background') {
+                        nav.className = 'background';
+                    }
+                }
+                else {
+                    if (nav.className === 'background') {
+                        nav.className = '';
+                    }
+                }
+
+
+            });
+    //        document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+        }
+    </script>
 
 </body>
 </html>
