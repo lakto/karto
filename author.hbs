@@ -2,24 +2,21 @@
 
 {{#author}}
     <!-- Wrapper -->
-    <div class="background" {{#if image}}style="background-image: url({{image}})"{{/if}}></div>
+    <div class="background" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}></div>
 
     <div class="wrapper">
         <!-- Main -->
 
         <section class="main" id="{{slug}}">
 
-            <article>
+            <article class="post portrait">
+                <img src="{{image}}">
+            </article>
+            <article class="post">
                 <header>
-
-                    <a href="{{url}}">
-                        <h1>{{name}}</h1>
-                    </a>
-
                 </header>
                 {{bio}}
                 <footer>
-                    <hr>
 
                 </footer>
             </article>
