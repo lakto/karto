@@ -1,5 +1,7 @@
 {
   "name": "Karto",
-  "version": "0.0.1-alpha"
+  "version": "0.0.9-beta",
+  "description": "Portfolio template to usw with Ghost blogging platform",
+  "author": "André Kilchenmann",
+  "homepage": "https://github.com/lakto/karto"
 }
-

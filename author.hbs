@@ -1,51 +1,30 @@
 {{!< default}}
 
-<!-- Wrapper -->
-<div id="wrapper">
-    {{#author}}
-    <!-- Main -->
-    <section id="main">
-        <header>
-            {{#if image}}
-                <a class="blog-image" href="author/{{slug}}" id="blog-image">
-                    <span class="avatar">
+{{#author}}
+    <!-- Wrapper -->
+    <div class="background" {{#if image}}style="background-image: url({{image}})"{{/if}}></div>
 
-                        <img src="{{image}}" alt="{{name}}">
-                    </span>
-                </a>
-            {{/if}}
-            <h1>{{@blog.title}}</h1>
-            <p>{{@blog.description}}</p>
+    <div class="wrapper">
+        <!-- Main -->
 
+        <section class="main" id="{{slug}}">
 
-        </header>
-        <footer>
-            <hr>
-            <p style="text-transform:lowercase">
-                The service is not yet ready — in the meantime
-            </p>
-            <p>
-                visit my social media and coding platforms
-            </p>
+            <article>
+                <header>
 
-            <ul class="icons">
-                <li><a href="https://www.pinterest.com/milchkannen" class="sm-pinterest">Pinterest</a></li>
-                <li><a href="https://ello.co/milchkannen" class="sm-ello">Ello</a></li>
-                <li><a href="http://codepen.io/milchkannen/" class="sm-codepen">CodePen</a></li>
-                <li><a href="https://github.com/milchkannen" class="sm-github">GitHub</a></li>
-                <li style="display:none;">
-                    <a href="http://dhlab.unibas.ch"
-                       title="Digital Humanities Lab (dhlab), University of Basel">DHLab</a>
-                </li>
-            </ul>
-        </footer>
-    </section>
-    {{/author}}
-    <!-- Footer -->
-    <footer id="footer">
-        <ul class="copyright">
-            <li>&copy; <a href="http://milchkannen.ch">milchkannen</a></li>
-        </ul>
-    </footer>
+                    <a href="{{url}}">
+                        <h1>{{name}}</h1>
+                    </a>
 
-</div>
+                </header>
+                {{bio}}
+                <footer>
+                    <hr>
+
+                </footer>
+            </article>
+
+        </section>
+
+    </div>
+{{/author}}

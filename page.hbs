@@ -1,0 +1,23 @@
+{{!< default}}
+{{#post}}
+    <div class="background" {{#if image}}style="background-image: url({{image}})"{{/if}}></div>
+{{/post}}
+
+<div class="wrapper">
+
+
+    <section class="main" id="{{slug}}">
+        <!-- Main -->
+        {{#post}}
+            {{> article-page}}
+        {{/post}}
+
+        <!-- additional posts -->
+        {{#get "posts" filter="tags:hash-work"}}
+            {{#foreach posts}}
+                {{> article}}
+            {{/foreach}}
+        {{/get}}
+    </section>
+
+</div>

@@ -9,18 +9,21 @@
 
         <section class="main" id="{{slug}}">
 
-            <article>
+            <article class="post">
                 <header>
-
                     <a href="{{url}}">
-                        <h1>{{title}}</h1>
+                        <h2>{{title}}</h2>
                     </a>
-
                 </header>
                 {{content}}
                 <footer>
                     <hr>
-
+                    <h4>Share this post on
+                        <a class="icon-twitter" href="https://twitter.com/share?text={{excerpt}} for {{title}} by LAKTO.design:&amp;url={{url absolute="true"}}"
+                           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                            <span class="hidden">Twitter</span>
+                        </a>
+                    </h4>
                 </footer>
             </article>
 

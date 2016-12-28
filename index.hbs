@@ -6,38 +6,31 @@
 <div class="wrapper">
     <!-- Main -->
     <section class="main">
-        <article>
-            <header>
-                {{#if @blog.logo}}
-                    <a class="blog-image" href="{{@blog.url}}" id="blog-image">
-                    <span class="image">
-                        <img src="{{@blog.logo}}" alt="{{@blog.title}}">
-                    </span>
-                    </a>
-                {{/if}}
-                <h1>{{@blog.title}}</h1>
-                <p>{{@blog.description}}</p>
-            </header>
-            <footer>
-                <hr>
-                <p style="text-transform:lowercase">
-                    The service is not yet ready — in the meantime
-                </p>
-                <p>
-                    visit my social media and coding platforms
-                </p>
+        {{#get "posts" filter="tags:hash-welcome"}}
+            {{#foreach posts}}
+                <article>
+                    <header>
+                        {{#if @blog.logo}}
+                            <a class="blog-image" href="{{@blog.url}}">
+                            <span class="image">
+                                <img src="{{@blog.logo}}" alt="{{@blog.title}}">
+                            </span>
+                            </a>
+                        {{/if}}
+                    </header>
+                    {{content}}
+                    <footer>
+                        <!-- the footer is for some share buttons (?) -->
+                    </footer>
+                </article>
+            {{/foreach}}
+        {{/get}}
 
-                <ul class="icons">
-                    <li><a href="https://www.pinterest.com/milchkannen" class="sm-pinterest">Pinterest</a></li>
-                    <li><a href="https://ello.co/milchkannen" class="sm-ello">Ello</a></li>
-                    <li><a href="http://codepen.io/milchkannen/" class="sm-codepen">CodePen</a></li>
-                    <li><a href="https://github.com/milchkannen" class="sm-github">GitHub</a></li>
-                    <li style="display:none;">
-                        <a href="http://dhlab.unibas.ch"
-                           title="Digital Humanities Lab (dhlab), University of Basel">DHLab</a>
-                    </li>
-                </ul>
-            </footer>
-        </article>
+        <!-- news -->
+        {{#get "posts" filter="tags:hash-news"}}
+            {{#foreach posts}}
+                {{> article}}
+            {{/foreach}}
+        {{/get}}
     </section>
 </div>

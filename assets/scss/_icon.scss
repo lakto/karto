@@ -75,8 +75,8 @@ ul.icons li a {
     display: block;
     width: 3.75em;
     height: 3.75em;
-    border-radius: 100%;
-    border: solid 1px #c8cccf;
+//    border-radius: 100%;
+//    border: solid 1px #c8cccf;
     line-height: 3.75em;
     overflow: hidden;
     text-align: center;
@@ -86,35 +86,35 @@ ul.icons li a {
 }
 
 ul.icons li a.sm-pinterest {
-    background-image: url('../icons/pinterest.jpg');
+    background-image: url('../img/pinterest.png');
 }
 
 ul.icons li a.sm-pinterest:hover {
-    background-image: url('../icons/pinterest-active.jpg');
+//    background-image: url('../img/pinterest-active.png');
 }
 
 ul.icons li a.sm-ello {
-    background-image: url('../icons/ello.jpg');
+//    background-image: url('../img/ello.png');
 }
 
 ul.icons li a.sm-ello:hover {
-    background-image: url('../icons/ello-active.jpg');
+//    background-image: url('../img/ello-active.png');
 }
 
 ul.icons li a.sm-codepen {
-    background-image: url('../icons/codepen.jpg');
+    background-image: url('../img/codepen.png');
 }
 
 ul.icons li a.sm-codepen:hover {
-    background-image: url('../icons/codepen-active.jpg');
+//    background-image: url('../img/codepen-active.png');
 }
 
 ul.icons li a.sm-github {
-    background-image: url('../icons/github.jpg');
+    background-image: url('../img/github.png');
 }
 
 ul.icons li a.sm-github:hover {
-    background-image: url('../icons/github-active.jpg');
+//    background-image: url('../img/github-active.png');
 }
 
 ul.icons li a:before {
@@ -149,6 +149,7 @@ ul.icons li a:before {
 
 ul.icons li a:hover {
     border-color: rgb(104, 172, 255);
+    background-color: rgba(129, 129, 129, 0.1);
 }
 
 @media screen and (max-width: 480px) {

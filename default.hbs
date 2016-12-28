@@ -23,11 +23,8 @@
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}"/>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}"/>
-    <noscript>
-        <link rel="stylesheet" href="{{asset "/css/noscript.css"}}"/>
-    </noscript>
+
+    <link rel="stylesheet" type="text/css" href="{{asset "css/main.min.css"}}"/>
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
@@ -47,23 +44,28 @@
             window.addEventListener('load', function () {
                 document.body.className = document.body.className.replace(/\bis-loading\b/, '');
                 var nav = document.getElementById('nav');
-            });
-            window.addEventListener('scroll', function () {
-                if (window.scrollY > 60) {
-                    if (nav.className !== 'background') {
-                        nav.className = 'background';
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > 90) {
+                        if (nav.className !== 'background') {
+                            nav.className = 'background';
+                        }
                     }
-                }
-                else {
-                    if (nav.className === 'background') {
-                        nav.className = '';
+                    else {
+                        if (nav.className === 'background') {
+                            nav.className = '';
+                        }
                     }
-                }
 
 
+                });
+                var year = new Date();
+                document.getElementById('copyright-year').innerHTML = '' + year.getFullYear();
+
             });
+
     //        document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
         }
+
     </script>
 
 </body>
