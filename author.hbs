@@ -1,9 +1,8 @@
 {{!< default}}
+<!-- Wrapper -->
+<div class="background" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}></div>
 
 {{#author}}
-    <!-- Wrapper -->
-    <div class="background" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}></div>
-
     <div class="wrapper">
         <!-- Main -->
 
@@ -12,6 +11,7 @@
             <article class="post portrait">
                 <img src="{{image}}">
             </article>
+
             <article class="post">
                 <header>
                     <h2>{{name}}</h2>
